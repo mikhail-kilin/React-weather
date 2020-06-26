@@ -12,7 +12,6 @@ export default class WeatherDisplay extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.zip);
     const zip = this.props.zip;
     const URL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=" +
       zip +
@@ -29,12 +28,16 @@ export default class WeatherDisplay extends Component {
         <CurrentWheather zip={this.props.zip}/>
         <Table bordered='true' className="center">
           <thead>
-            <th>Day of week</th>
-            <th>Icon</th>
-            <th>Temp day</th>
-            <th>Temp night</th>
+            <tr>
+              <th>Day of week</th>
+              <th>Icon</th>
+              <th>Temp day</th>
+              <th>Temp night</th>
+            </tr>
           </thead>
-          {days == null ? "loading..." : days.list.map((data, index) => (<Day key={index} index={index} data={data}/>))}
+          <tbody>
+            {days == null ? <tr><td>"loading..."</td></tr> : days.list.map((data, index) => (<Day key={index} index={index} data={data}/>))}
+          </tbody>
         </Table>
       </div>
     );

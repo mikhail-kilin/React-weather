@@ -28,7 +28,7 @@ class App extends Component {
         <Container>
           <Row>
             <Col md={{ span: 10, offset: 2 }}>
-              <h2 className='center'>Wheather in {PLACES[activePlace].name}:</h2>
+              <h2 className='center'>Weather in {PLACES[activePlace].name}:</h2>
               <hr/>
             </Col>
           </Row>
@@ -39,6 +39,7 @@ class App extends Component {
                 <div key={index}>
                   <Button
                     size="sm"
+                    id={place.name}
                     variant="outline-primary"
                     onClick={() => {
                       this.setState({ activePlace: index });

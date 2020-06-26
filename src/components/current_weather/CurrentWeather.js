@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { Table, Row, Col} from "react-bootstrap";
 
@@ -29,13 +30,17 @@ export default class CurrentWeather extends Component {
       <Row>
         <Col md={{ span: 4, offset: 4 }} className="center">
           <Table bordered='true'>
-            <td>
-              <h4>Current weather: </h4>
-              <div><img src={iconUrl} alt={iconData.description}/></div>
-              <div>Temp now: {weatherData.temp} °C</div>
-              <div>Temp min: {weatherData.temp_min} °C</div>
-              <div>Temp max: {weatherData.temp_max} °C</div>
-            </td>
+            <tbody>
+              <tr>
+                <td>
+                  <h4>Current weather: </h4>
+                  <div><img src={iconUrl} alt={iconData.description}/></div>
+                  <div>Temp now: {weatherData.temp} °C</div>
+                  <div>Temp min: {weatherData.temp_min} °C</div>
+                  <div>Temp max: {weatherData.temp_max} °C</div>
+                </td>
+              </tr>
+            </tbody>
           </Table>
         </Col>
         <Col md="4"/>
